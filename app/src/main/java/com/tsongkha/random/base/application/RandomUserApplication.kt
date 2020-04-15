@@ -1,6 +1,7 @@
 package com.tsongkha.random.base.application
 
 import android.app.Application
+import com.tsongkha.random.base.network.networkModule
 import toothpick.Scope
 import toothpick.ktp.KTP
 import toothpick.ktp.binding.bind
@@ -17,7 +18,8 @@ class RandomUserApplication : Application() {
             .installModules(
                 module {
                     bind<Application>().toInstance { this@RandomUserApplication }
-                }
+                },
+                networkModule
             )
     }
 }
