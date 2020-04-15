@@ -1,4 +1,4 @@
-package com.tsongkha.random.base
+package com.tsongkha.random.base.application
 
 import android.app.Application
 import toothpick.Scope

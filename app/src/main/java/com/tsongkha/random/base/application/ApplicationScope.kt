@@ -1,4 +1,4 @@
-package com.tsongkha.random.base
+package com.tsongkha.random.base.application
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
