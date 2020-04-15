@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.tsongkha.random.R
 import com.tsongkha.random.base.application.ApplicationScope
 import com.tsongkha.random.base.network.UserService
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import toothpick.ktp.KTP
 import javax.inject.Inject
 
@@ -18,5 +20,8 @@ class ListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list)
         KTP.openScopes(ApplicationScope::class.java)
             .inject(this)
+        GlobalScope.launch {
+            userService.users(1, "abc", 50, null, null)
+        }
     }
 }
