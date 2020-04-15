@@ -4,7 +4,7 @@ import com.tsongkha.random.user.Result
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RandomUserService {
+interface UserService {
 
     @GET("/api/")
     suspend fun users(

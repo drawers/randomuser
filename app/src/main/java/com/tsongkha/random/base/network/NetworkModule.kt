@@ -14,13 +14,13 @@ val networkModule = module {
             .baseUrl("https://randomuser.me")
             .build()
     }
-    bind<RandomUserService>().toProvider(RandomUserServiceProvider::class)
+    bind<UserService>().toProvider(UserServiceProvider::class)
 }
 
 @InjectConstructor
-class RandomUserServiceProvider(private val retrofit: Retrofit) : Provider<RandomUserService> {
+class UserServiceProvider(private val retrofit: Retrofit) : Provider<UserService> {
 
-    override fun get(): RandomUserService {
-        return retrofit.create(RandomUserService::class.java)
+    override fun get(): UserService {
+        return retrofit.create(UserService::class.java)
     }
 }
