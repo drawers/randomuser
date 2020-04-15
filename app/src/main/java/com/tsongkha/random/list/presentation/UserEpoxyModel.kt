@@ -1,6 +1,7 @@
 package com.tsongkha.random.list.presentation
 
 import android.view.View
+import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
@@ -9,6 +10,25 @@ import kotlinx.android.extensions.LayoutContainer
 
 @EpoxyModelClass(layout = R.layout.item_user)
 abstract class UserEpoxyModel : EpoxyModelWithHolder<UserEpoxyModel.Holder>() {
+
+    @EpoxyAttribute
+    lateinit var titleName: String
+
+    @EpoxyAttribute
+    lateinit var thumbnail: String
+
+    @EpoxyAttribute
+    lateinit var dob: String
+
+    @EpoxyAttribute
+    lateinit var gender: String
+
+    override fun bind(holder: Holder) {
+        super.bind(holder)
+        with(holder) {
+
+        }
+    }
 
     class Holder : BaseEpoxyHolder()
 }
