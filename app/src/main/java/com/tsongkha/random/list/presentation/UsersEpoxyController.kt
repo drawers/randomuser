@@ -14,6 +14,7 @@ class UsersEpoxyController : TypedEpoxyController<List<User>>() {
                    titleName(it.name.title + it.name.first + it.name.last)
                    gender(it.gender)
                    dob(it.dob.date)
+                   thumbnail(it.picture.thumbnail)
                }
         }
     }

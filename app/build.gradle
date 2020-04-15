@@ -12,6 +12,10 @@ android {
         targetCompatibility 1.8
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     defaultConfig {
         applicationId "com.tsongkha.random"
         minSdkVersion 21
@@ -56,6 +60,8 @@ dependencies {
     implementation 'com.airbnb.android:epoxy:3.9.0'
     implementation 'com.airbnb.android:epoxy-paging:3.9.0'
     kapt 'com.airbnb.android:epoxy-processor:3.9.0'
+
+    implementation 'io.coil-kt:coil:0.9.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

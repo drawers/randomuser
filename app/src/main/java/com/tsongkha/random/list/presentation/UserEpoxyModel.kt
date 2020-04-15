@@ -1,7 +1,9 @@
 package com.tsongkha.random.list.presentation
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import coil.api.load
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
@@ -30,6 +32,7 @@ abstract class UserEpoxyModel : EpoxyModelWithHolder<UserEpoxyModel.Holder>() {
             findViewById<TextView>(R.id.nameTextView).text = titleName
             findViewById<TextView>(R.id.genderTextView).text = gender
             findViewById<TextView>(R.id.dobTextView).text = dob
+            findViewById<ImageView>(R.id.thumbnailImageView).load(uri = thumbnail)
         }
     }
 
