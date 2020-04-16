@@ -18,7 +18,7 @@ class PagedUserController : PagedListEpoxyController<User>() {
         }
         else -> {
             user {
-                id(item.id.name)
+                id(item.login.uuid)
                 titleName(item.name.title + item.name.first + item.name.last)
                 gender(item.gender)
                 dob(item.dob.date)
