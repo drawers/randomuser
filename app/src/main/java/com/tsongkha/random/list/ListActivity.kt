@@ -23,12 +23,15 @@ class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+
         KTP.openScopes(ApplicationScope::class.java)
             .inject(this)
+
         val recyclerView = findViewById<RecyclerView>(R.id.usersRecyclerView)
         val controller = PagedUserController()
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = controller.adapter
+
         viewModel.pagedList.observe(this, Observer { newList -> controller.submitList(newList) })
     }
 }
