@@ -4,9 +4,12 @@ import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.tsongkha.random.BuildConfig
 import com.tsongkha.random.user.User
+import java.text.SimpleDateFormat
 import java.util.Locale
 
-class PagedUserController : PagedListEpoxyController<User>() {
+class PagedUserController() : PagedListEpoxyController<User>() {
+
+    private val dateFormat = SimpleDateFormat.getDateInstance(SimpleDateFormat.SHORT)
 
     override fun buildItemModel(currentPosition: Int, item: User?): EpoxyModel<*> = when (item) {
         null -> {
@@ -22,7 +25,7 @@ class PagedUserController : PagedListEpoxyController<User>() {
                 id(item.login.uuid)
                 titleName("${item.name.first} ${item.name.last} (${item.name.title})")
                 gender(item.gender.take(1).toUpperCase(Locale.ROOT))
-                dob(item.dob.date)
+                dob(dateFormat.format(item.dob.date))
                 thumbnail(item.picture.thumbnail)
             }
         }
