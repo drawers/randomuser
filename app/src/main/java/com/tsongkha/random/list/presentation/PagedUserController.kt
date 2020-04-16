@@ -13,12 +13,8 @@ class PagedUserController() : PagedListEpoxyController<User>() {
 
     override fun buildItemModel(currentPosition: Int, item: User?): EpoxyModel<*> = when (item) {
         null -> {
-            user {
+            userPlaceholder {
                 id(-currentPosition)
-                titleName("loading")
-                dob("loading")
-                gender("m")
-                thumbnail("")
             }
         }
         else -> {
@@ -41,5 +37,9 @@ class PagedUserController() : PagedListEpoxyController<User>() {
 
     private fun user(block: UserEpoxyModel_.() -> Unit): UserEpoxyModel {
         return UserEpoxyModel_().apply { block(this) }
+    }
+
+    private fun userPlaceholder(block: UserPlaceholderEpoxyModel_.() -> Unit): UserPlaceholderEpoxyModel {
+        return UserPlaceholderEpoxyModel_().apply { block(this) }
     }
 }
