@@ -12,7 +12,7 @@ import com.tsongkha.random.list.presentation.PagedUserController
 import toothpick.ktp.KTP
 import javax.inject.Inject
 
-class ListActivity : AppCompatActivity() {
+class UserListActivity : AppCompatActivity() {
 
     @Inject
     lateinit var userService: UserService

@@ -12,7 +12,7 @@ class OkHttpClientProvider : Provider<OkHttpClient> {
         return OkHttpClient.Builder()
             .addInterceptor(
                 HttpLoggingInterceptor().setLevel(
-                    HttpLoggingInterceptor.Level.BODY
+                    HttpLoggingInterceptor.Level.HEADERS
                 )
             )
             .build()
