@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.presentation
+package com.tsongkha.random.list.epoxy
 
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController
@@ -8,6 +8,10 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class PagedUserController() : PagedListEpoxyController<User>() {
+
+    init {
+        isDebugLoggingEnabled = true
+    }
 
     private val dateFormat = SimpleDateFormat.getDateInstance(SimpleDateFormat.SHORT)
 
@@ -39,7 +43,7 @@ class PagedUserController() : PagedListEpoxyController<User>() {
         return UserEpoxyModel_().apply { block(this) }
     }
 
-    private fun userPlaceholder(block: UserPlaceholderEpoxyModel_.() -> Unit): UserPlaceholderEpoxyModel {
-        return UserPlaceholderEpoxyModel_().apply { block(this) }
+    private fun userPlaceholder(block: UserPlaceholderModel_.() -> Unit): UserPlaceholderModel {
+        return UserPlaceholderModel_().apply { block(this) }
     }
 }

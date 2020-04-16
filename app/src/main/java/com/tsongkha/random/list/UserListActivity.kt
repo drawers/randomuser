@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tsongkha.random.R
 import com.tsongkha.random.base.application.ApplicationScope
 import com.tsongkha.random.base.network.UserService
-import com.tsongkha.random.list.presentation.PagedUserController
+import com.tsongkha.random.list.epoxy.PagedUserController
 import toothpick.ktp.KTP
 import javax.inject.Inject
 

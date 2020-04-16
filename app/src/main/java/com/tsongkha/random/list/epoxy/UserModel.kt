@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.presentation
+package com.tsongkha.random.list.epoxy
 
 import android.view.View
 import android.widget.ImageView
