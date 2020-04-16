@@ -20,6 +20,10 @@ class ListActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: UserListViewModel
 
+    private val epoxyController: PagedUserController by lazy {
+        PagedUserController()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
@@ -28,10 +32,9 @@ class ListActivity : AppCompatActivity() {
             .inject(this)
 
         val recyclerView = findViewById<RecyclerView>(R.id.usersRecyclerView)
-        val controller = PagedUserController()
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = controller.adapter
+        recyclerView.adapter = epoxyController.adapter
 
-        viewModel.pagedList.observe(this, Observer { newList -> controller.submitList(newList) })
+        viewModel.pagedList.observe(this, Observer { newList -> epoxyController.submitList(newList) })
     }
 }
