@@ -15,7 +15,7 @@ import toothpick.InjectConstructor
 const val PAGE_SIZE = 50
 const val MAX_RESULTS = 5000
 
-class UsersViewModel(private val userService: UserService) : ViewModel() {
+class UserListViewModel(private val userService: UserService) : ViewModel() {
 
     val pagedList: LiveData<PagedList<User>> by lazy {
         LivePagedListBuilder<Int, User>(
