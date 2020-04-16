@@ -4,6 +4,7 @@ import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.tsongkha.random.BuildConfig
 import com.tsongkha.random.user.User
+import java.util.Locale
 
 class PagedUserController : PagedListEpoxyController<User>() {
 
@@ -19,8 +20,8 @@ class PagedUserController : PagedListEpoxyController<User>() {
         else -> {
             user {
                 id(item.login.uuid)
-                titleName(item.name.title + item.name.first + item.name.last)
-                gender(item.gender)
+                titleName("${item.name.first} ${item.name.last} (${item.name.title})")
+                gender(item.gender.take(1).toUpperCase(Locale.ROOT))
                 dob(item.dob.date)
                 thumbnail(item.picture.thumbnail)
             }
