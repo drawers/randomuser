@@ -22,6 +22,8 @@ class UserListDataSource(
             )
             callback.onResult(
                 items.results,
+                0,
+                MAX_RESULTS,
                 null,
                 nextPage(1)
             )

@@ -18,6 +18,7 @@ class PagedUserController() : PagedListEpoxyController<User>() {
                 titleName("loading")
                 dob("loading")
                 gender("m")
+                thumbnail("")
             }
         }
         else -> {
