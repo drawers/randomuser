@@ -1,14 +1,16 @@
 package com.tsongkha.random.base.db
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.tsongkha.random.user.User
 
+@Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg users: User)
+    fun insert(vararg users: UserEntity)
 
     @Query("SELECT * FROM user")
-    fun allUsers(): List<User>
+    fun allUsers(): List<UserEntity>
 }

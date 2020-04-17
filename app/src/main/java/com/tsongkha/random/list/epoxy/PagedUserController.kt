@@ -23,7 +23,7 @@ class PagedUserController() : PagedListEpoxyController<User>() {
         }
         else -> {
             user {
-                id(item.login.uuid)
+                id(item.email)
                 titleName("${item.name.first} ${item.name.last} (${item.name.title})")
                 gender(item.gender.take(1).toUpperCase(Locale.ROOT))
                 dob(dateFormat.format(item.dob.date))
