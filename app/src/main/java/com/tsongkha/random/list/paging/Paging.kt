@@ -22,5 +22,5 @@ data class Paging(
     /**
      * Previous page or null if no previous data
      */
-    fun previousPage(currentPage: Int): Int? = (currentPage - 1).takeUnless { it < 0 }
+    fun previousPage(currentPage: Int): Int? = (currentPage - 1).takeUnless { it <= 0 }
 }
