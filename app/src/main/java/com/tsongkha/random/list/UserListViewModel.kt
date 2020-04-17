@@ -20,7 +20,7 @@ class UserListViewModel(
         LivePagedListBuilder<Int, User>(
             UserListDataSourceFactory(
                 userService = userService,
-                pagingConfig = paging
+                paging = paging
             ),
             PagedList.Config.Builder()
                 .setEnablePlaceholders(true)

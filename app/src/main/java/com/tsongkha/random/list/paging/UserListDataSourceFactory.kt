@@ -16,7 +16,7 @@ class UserListDataSourceFactory(
     override fun create(): DataSource<Int, User> {
         return UserListDataSource(
             userService = userService,
-            pagingConfig = paging
+            paging = paging
         ).also {
             latestSource = it
             sourceLiveData.postValue(it)
