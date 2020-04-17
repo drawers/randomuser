@@ -38,7 +38,7 @@ fun UserEntity.toDomain(): User = User(
     nat = this.nat
 )
 
-fun User.toUserEntity(): UserEntity = UserEntity(
+fun User.toUserEntity(id: Int): UserEntity = UserEntity(
     uuid = this.login.uuid,
     gender = this.gender,
     firstName = this.name.first,
@@ -58,5 +58,6 @@ fun User.toUserEntity(): UserEntity = UserEntity(
     mediumImage = this.picture.medium,
     largeImage = this.picture.large,
     thumbnail = this.picture.thumbnail,
-    nat = this.nat
+    nat = this.nat,
+    id = id
 )

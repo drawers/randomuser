@@ -1,15 +1,23 @@
 package com.tsongkha.random.base.network
 
+import com.tsongkha.random.list.paging.PagingConfig
 import com.tsongkha.random.user.Result
 import kotlinx.coroutines.delay
 import toothpick.InjectConstructor
 import javax.inject.Named
 
 @InjectConstructor
-class DelayingUserService(@Named(RETROFIT) private val userService: UserService) : UserService {
+class DelayingUserService(
+    @Named(RETROFIT) private val userService: UserService,
+    private val pagingConfig: PagingConfig
+) : UserService {
 
     override suspend fun users(page: Int, seed: String, results: Int, exclude: String?, include: String?): Result {
-        delay(4000)
-        return userService.users(page, seed, results, exclude, include)
+        delay(2000)
+        val result = userService.users(page, seed, results, exclude, include)
+        result.results.forEachIndexed { index, user ->
+            user.id = pagingConfig.id(page, index)
+        }
+        return result
     }
 }

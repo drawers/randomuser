@@ -14,4 +14,7 @@ data class User(
     val cell: String,
     val picture: Picture,
     val nat: String
-)
+) {
+    @Transient
+    var id: Int = 0
+}

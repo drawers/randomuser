@@ -25,8 +25,7 @@ data class UserEntity(
     val mediumImage: String,
     val largeImage: String,
     val thumbnail: String,
-    val nat: String
-) {
-    @PrimaryKey(autoGenerate = true)
-    var id: Int? = 0
-}
+    val nat: String,
+    @PrimaryKey
+    val id: Int
+)

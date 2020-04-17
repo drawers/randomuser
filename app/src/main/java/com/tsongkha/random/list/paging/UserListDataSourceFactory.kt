@@ -6,7 +6,8 @@ import com.tsongkha.random.base.network.UserService
 import com.tsongkha.random.user.User
 
 class UserListDataSourceFactory(
-    private val userService: UserService
+    private val userService: UserService,
+    private val pagingConfig: PagingConfig
 ) : DataSource.Factory<Int, User>() {
 
     private val sourceLiveData = MutableLiveData<UserListDataSource>()
@@ -14,7 +15,8 @@ class UserListDataSourceFactory(
 
     override fun create(): DataSource<Int, User> {
         return UserListDataSource(
-            userService = userService
+            userService = userService,
+            pagingConfig = pagingConfig
         ).also {
             latestSource = it
             sourceLiveData.postValue(it)
