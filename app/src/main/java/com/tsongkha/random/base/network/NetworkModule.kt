@@ -1,8 +1,8 @@
 package com.tsongkha.random.base.network
 
 import com.squareup.moshi.Moshi
-import com.tsongkha.random.list.paging.PagingConfig
-import com.tsongkha.random.list.paging.PagingConfigProvider
+import com.tsongkha.random.list.paging.Paging
+import com.tsongkha.random.list.paging.PagingProvider
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import toothpick.ktp.binding.bind
@@ -16,5 +16,5 @@ val networkModule = module {
     bind<Retrofit>().toProvider(RetrofitProvider::class)
     bind<UserService>().withName(RETROFIT).toProvider(UserServiceProvider::class)
     bind<UserService>().toClass<DelayingUserService>()
-    bind<PagingConfig>().toProvider(PagingConfigProvider::class)
+    bind<Paging>().toProvider(PagingProvider::class)
 }

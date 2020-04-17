@@ -1,6 +1,6 @@
 package com.tsongkha.random.list.paging
 
-data class PagingConfig(
+data class Paging(
     val maxResults: Int,
     val pageSize: Int,
     val initialPage: Int,

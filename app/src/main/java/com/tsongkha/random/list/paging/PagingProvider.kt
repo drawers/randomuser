@@ -4,9 +4,9 @@ import toothpick.InjectConstructor
 import javax.inject.Provider
 
 @InjectConstructor
-class PagingConfigProvider : Provider<PagingConfig> {
+class PagingProvider : Provider<Paging> {
 
-    override fun get(): PagingConfig = PagingConfig(
+    override fun get(): Paging = Paging(
         maxResults = 200,
         pageSize = 50,
         initialPage = 1,

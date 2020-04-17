@@ -7,24 +7,24 @@ import kotlinx.coroutines.runBlocking
 
 class UserListDataSource(
     private val userService: UserService,
-    private val pagingConfig: PagingConfig
+    private val paging: Paging
 ) : PageKeyedDataSource<Int, User>() {
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, User>) {
         runBlocking {
             val items = userService.users(
-                page = pagingConfig.initialPage,
-                seed = pagingConfig.seed,
-                results = pagingConfig.pageSize,
+                page = paging.initialPage,
+                seed = paging.seed,
+                results = paging.pageSize,
                 include = null,
                 exclude = "registered"
             )
             callback.onResult(
                 items.results,
                 0,
-                pagingConfig.maxResults,
+                paging.maxResults,
                 null,
-                pagingConfig.nextPage(items.info.page)
+                paging.nextPage(items.info.page)
             )
         }
     }
@@ -33,14 +33,14 @@ class UserListDataSource(
         runBlocking {
             val items = userService.users(
                 page = params.key,
-                seed = pagingConfig.seed,
+                seed = paging.seed,
                 results = params.requestedLoadSize,
                 include = null,
                 exclude = "registered"
             )
             callback.onResult(
                 items.results,
-                pagingConfig.nextPage(items.info.page)
+                paging.nextPage(items.info.page)
             )
         }
     }
@@ -49,14 +49,14 @@ class UserListDataSource(
         runBlocking {
             val items = userService.users(
                 page = params.key,
-                seed = pagingConfig.seed,
+                seed = paging.seed,
                 results = params.requestedLoadSize,
                 include = null,
                 exclude = "registered"
             )
             callback.onResult(
                 items.results,
-                pagingConfig.previousPage(items.info.page)
+                paging.previousPage(items.info.page)
             )
         }
     }
