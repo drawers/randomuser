@@ -6,7 +6,6 @@ import java.util.Date
 
 @Entity(tableName = "user")
 data class UserEntity(
-    @PrimaryKey
     val uuid: String,
     val gender: String,
     val firstName: String,
@@ -27,4 +26,7 @@ data class UserEntity(
     val largeImage: String,
     val thumbnail: String,
     val nat: String
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = 0
+}
