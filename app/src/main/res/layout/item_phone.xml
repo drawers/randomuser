@@ -15,8 +15,7 @@
             android:id="@+id/phoneImageView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:contentDescription="Phone icon"
-            android:drawableStart="@drawable/ic_baseline_contact_phone_24"
+            android:contentDescription="@string/phone_icon"
             android:padding="16dp"
             android:src="@drawable/ic_baseline_contact_phone_24"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Home"
+            android:text="@string/home"
             app:layout_constraintBaseline_toBaselineOf="@id/primaryPhoneTextView"
             app:layout_constraintEnd_toStartOf="@id/primaryPhoneTextView"
             app:layout_constraintStart_toStartOf="parent" />
@@ -52,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Mobile"
+            android:text="@string/mobile"
             app:layout_constraintBaseline_toBaselineOf="@id/secondaryPhoneTextView"
             app:layout_constraintEnd_toStartOf="@id/secondaryPhoneTextView"
             app:layout_constraintStart_toStartOf="parent" />

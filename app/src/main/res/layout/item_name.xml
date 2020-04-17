@@ -12,38 +12,40 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/locationImageView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/profileImageView"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:contentDescription="@string/phone_icon"
             android:padding="16dp"
-            android:src="@drawable/ic_baseline_my_location_24"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/primaryTitleTextView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/address"
-            app:layout_constraintBaseline_toBaselineOf="@id/primaryPhoneTextView"
-            app:layout_constraintEnd_toStartOf="@id/primaryPhoneTextView"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/primaryPhoneTextView"
+            android:id="@+id/nameTextView"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@id/titleGenderTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profileImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="John Smith" />
+
+        <TextView
+            android:id="@+id/titleGenderTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/primaryTitleTextView"
-            app:layout_constraintTop_toBottomOf="@id/locationImageView"
-            tools:text="22 Ennis Avenue, Pakuranga\nAuckland\nNew Zealand" />
+            app:layout_constraintStart_toEndOf="@id/profileImageView"
+            app:layout_constraintTop_toBottomOf="@id/nameTextView"
+            tools:text="Mr (M)" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
