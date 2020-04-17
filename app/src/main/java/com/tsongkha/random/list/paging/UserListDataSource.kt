@@ -18,7 +18,7 @@ class UserListDataSource(
                 seed = SEED,
                 results = PAGE_SIZE,
                 include = null,
-                exclude = "login, registered"
+                exclude = "registered"
             )
             callback.onResult(
                 items.results,
@@ -37,7 +37,7 @@ class UserListDataSource(
                 seed = SEED,
                 results = params.requestedLoadSize,
                 include = null,
-                exclude = "login, registered"
+                exclude = "registered"
             )
             callback.onResult(
                 items.results,
@@ -53,7 +53,7 @@ class UserListDataSource(
                 seed = SEED,
                 results = params.requestedLoadSize,
                 include = null,
-                exclude = "login, registered"
+                exclude = "registered"
             )
             callback.onResult(
                 items.results,

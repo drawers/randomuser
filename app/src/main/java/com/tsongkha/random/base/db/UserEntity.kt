@@ -2,9 +2,12 @@ package com.tsongkha.random.base.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.Date
 
 @Entity(tableName = "user")
 data class UserEntity(
+    @PrimaryKey
+    val uuid: String,
     val gender: String,
     val firstName: String,
     val lastName: String,
@@ -16,7 +19,7 @@ data class UserEntity(
     val country: String,
     val postcode: String,
     val email: String,
-    val dob: String,
+    val dob: Date,
     val age: Int,
     val phone: String,
     val cell: String,
@@ -24,7 +27,4 @@ data class UserEntity(
     val largeImage: String,
     val thumbnail: String,
     val nat: String
-) {
-    @PrimaryKey(autoGenerate = true)
-    var primaryKey: Int = 0
-}
+)

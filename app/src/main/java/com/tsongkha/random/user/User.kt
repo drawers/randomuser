@@ -1,10 +1,5 @@
 package com.tsongkha.random.user
 
-import androidx.room.ColumnInfo
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.Ignore
-import androidx.room.PrimaryKey
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
@@ -15,8 +10,8 @@ data class User(
     val email: String,
     val dob: Dob,
     val phone: String,
+    val login: Login,
     val cell: String,
-    val id: Id,
     val picture: Picture,
     val nat: String
 )
