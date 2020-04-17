@@ -39,8 +39,8 @@ class PagedUserController() : PagedListEpoxyController<User>() {
         }
     }
 
-    private fun user(block: UserEpoxyModel_.() -> Unit): UserEpoxyModel {
-        return UserEpoxyModel_().apply { block(this) }
+    private fun user(block: UserModel_.() -> Unit): UserModel {
+        return UserModel_().apply { block(this) }
     }
 
     private fun userPlaceholder(block: UserPlaceholderModel_.() -> Unit): UserPlaceholderModel {

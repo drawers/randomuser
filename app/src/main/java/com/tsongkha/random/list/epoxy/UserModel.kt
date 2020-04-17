@@ -11,7 +11,7 @@ import com.tsongkha.random.R
 import com.tsongkha.random.base.BaseEpoxyHolder
 
 @EpoxyModelClass(layout = R.layout.item_user)
-abstract class UserEpoxyModel : EpoxyModelWithHolder<UserEpoxyModel.Holder>() {
+abstract class UserModel : EpoxyModelWithHolder<UserModel.Holder>() {
 
     @EpoxyAttribute
     lateinit var titleName: String

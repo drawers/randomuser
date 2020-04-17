@@ -23,25 +23,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/primaryTitleTextView"
+            android:id="@+id/addressTitleTextView"
             style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/address"
-            app:layout_constraintBaseline_toBaselineOf="@id/primaryPhoneTextView"
-            app:layout_constraintEnd_toStartOf="@id/primaryPhoneTextView"
+            app:layout_constraintBaseline_toBaselineOf="@id/addressTextView"
+            app:layout_constraintEnd_toStartOf="@id/addressTextView"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/primaryPhoneTextView"
+            android:id="@+id/addressTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/primaryTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/addressTitleTextView"
             app:layout_constraintTop_toBottomOf="@id/locationImageView"
             tools:text="22 Ennis Avenue, Pakuranga\nAuckland\nNew Zealand" />
 
