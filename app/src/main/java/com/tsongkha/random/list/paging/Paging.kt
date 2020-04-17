@@ -22,7 +22,7 @@ data class Paging(
             check(sum > maxResults)
             check(sum > pageSize)
 
-            return (maxResults + pageSize - 1) / pageSize
+            return sum / pageSize
         }
 
     /**
