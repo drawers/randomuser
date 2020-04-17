@@ -2,7 +2,6 @@ package com.tsongkha.random.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.tsongkha.random.base.network.UserService

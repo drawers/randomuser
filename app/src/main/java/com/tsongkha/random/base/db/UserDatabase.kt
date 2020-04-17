@@ -3,7 +3,6 @@ package com.tsongkha.random.base.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.tsongkha.random.user.User
 
 @Database(
     entities = [UserEntity::class],
