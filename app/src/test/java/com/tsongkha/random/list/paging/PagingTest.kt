@@ -55,7 +55,7 @@ class PagingTest {
 
 
     @Test
-    fun `total pages correct`() {
+    fun `total pages correct for even division`() {
         val paging = Paging(
             200,
             50,
@@ -64,5 +64,17 @@ class PagingTest {
         )
 
         assertEquals(4, paging.totalPages)
+    }
+
+    @Test
+    fun `total pages correct for uneven division`() {
+        val paging = Paging(
+            201,
+            50,
+            1,
+            "abc"
+        )
+
+        assertEquals(5, paging.totalPages)
     }
 }
