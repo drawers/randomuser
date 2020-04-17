@@ -1,16 +1,14 @@
 package com.tsongkha.random.list.epoxy
 
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import coil.api.load
 import coil.transform.CircleCropTransformation
 import com.airbnb.epoxy.EpoxyAttribute
-import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.tsongkha.random.R
-import kotlinx.android.extensions.LayoutContainer
+import com.tsongkha.random.base.BaseEpoxyHolder
 
 @EpoxyModelClass(layout = R.layout.item_user)
 abstract class UserEpoxyModel : EpoxyModelWithHolder<UserEpoxyModel.Holder>() {
@@ -40,14 +38,4 @@ abstract class UserEpoxyModel : EpoxyModelWithHolder<UserEpoxyModel.Holder>() {
     }
 
     class Holder : BaseEpoxyHolder()
-}
-
-abstract class BaseEpoxyHolder : EpoxyHolder(), LayoutContainer {
-    lateinit var itemView: View
-    override val containerView: View?
-        get() = itemView
-
-    override fun bindView(itemView: View) {
-        this.itemView = itemView
-    }
 }
