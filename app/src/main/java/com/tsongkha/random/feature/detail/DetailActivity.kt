@@ -35,13 +35,13 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT).show()
-        val recyclerView = findViewById<RecyclerView>(R.id.contentRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val controller = DetailController()
 
         val bundle = requireNotNull(intent.getBundleExtra(EXTRA_BUNDLE))
         val user = requireNotNull(bundle.getParcelable<User>(EXTRA_USER))
+
+        val recyclerView = findViewById<RecyclerView>(R.id.contentRecyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val controller = DetailController()
 
         recyclerView.adapter = controller.adapter
         controller.setData(

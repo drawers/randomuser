@@ -11,7 +11,7 @@ class DetailController : TypedEpoxyController<User>() {
         name {
             id("name")
             name(data.name.fullName)
-            titleGender("${data.name.title} ${data.gender}")
+            titleGender("${data.name.title} (${data.abbreviatedGender})")
             pictureUrl(data.picture.large)
         }
 

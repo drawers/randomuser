@@ -3,6 +3,7 @@ package com.tsongkha.random.common.domain
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 import java.util.Date
+import java.util.Locale
 
 @Parcelize
 data class User(
@@ -18,6 +19,8 @@ data class User(
     val nat: String
 ) : Parcelable {
 
+    val abbreviatedGender
+        get() = gender.take(1).toUpperCase(Locale.ROOT)
 }
 
 @Parcelize

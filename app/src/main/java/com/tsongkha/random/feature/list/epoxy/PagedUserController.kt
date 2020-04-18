@@ -25,7 +25,7 @@ class PagedUserController(private val callback: (User) -> Unit) : PagedListEpoxy
             user {
                 id(item.id)
                 titleName("${item.name.first} ${item.name.last} (${item.name.title}) ${item.id}")
-                gender(item.gender.take(1).toUpperCase(Locale.ROOT))
+                gender(item.abbreviatedGender)
                 dob(dateFormat.format(item.dob))
                 thumbnail(item.picture.thumbnail)
                 onClick { callback.invoke(item) }
