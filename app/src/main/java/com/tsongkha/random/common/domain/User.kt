@@ -16,14 +16,20 @@ data class User(
     val phone: Phone,
     val picture: Picture,
     val nat: String
-) : Parcelable
+) : Parcelable {
+
+}
 
 @Parcelize
 data class Name(
     val title: String,
     val first: String,
     val last: String
-) : Parcelable
+) : Parcelable {
+
+    val fullName
+        get() = "$first $last"
+}
 
 @Parcelize
 data class Phone(
@@ -38,7 +44,11 @@ data class Location(
     val state: String,
     val country: String,
     val postcode: String
-) : Parcelable
+) : Parcelable {
+
+    val streetAddress
+        get() = "${street.number} ${street.name}\n$city\n$country\n$postcode"
+}
 
 @Parcelize
 data class Street(
