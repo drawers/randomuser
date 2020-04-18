@@ -4,7 +4,6 @@ import android.net.ConnectivityManager
 import com.squareup.moshi.Moshi
 import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.common.domain.UserDataSourceProvider
-import com.tsongkha.random.common.network.dto.ConnectivityManagerProvider
 import com.tsongkha.random.feature.list.paging.Paging
 import com.tsongkha.random.feature.list.paging.PagingProvider
 import okhttp3.OkHttpClient

@@ -1,4 +1,4 @@
-package com.tsongkha.random.common.network.dto
+package com.tsongkha.random.common.network
 
 import android.content.Context
 import android.net.ConnectivityManager
