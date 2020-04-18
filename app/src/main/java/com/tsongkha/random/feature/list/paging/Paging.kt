@@ -16,6 +16,8 @@ data class Paging(
     // source: https://stackoverflow.com/a/17974
     val totalPages: Int
         get() {
+            // max results divided by page number rounding up with integer division
+
             val sum = maxResults + pageSize - 1
 
             // check for integer overflow
