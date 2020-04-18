@@ -40,14 +40,12 @@ class DetailActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val controller = DetailController()
 
-        val bundle = intent.getBundleExtra(EXTRA_BUNDLE)
-        val user = bundle.getParcelable<User>(EXTRA_USER)
+        val bundle = requireNotNull(intent.getBundleExtra(EXTRA_BUNDLE))
+        val user = requireNotNull(bundle.getParcelable<User>(EXTRA_USER))
 
         recyclerView.adapter = controller.adapter
         controller.setData(
-            requireNotNull(
-                user
-            )
+            user
         )
     }
 }
