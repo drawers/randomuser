@@ -1,4 +1,4 @@
-package com.tsongkha.random.detail.epoxy
+package com.tsongkha.random.feature.detail.epoxy
 
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyAttribute

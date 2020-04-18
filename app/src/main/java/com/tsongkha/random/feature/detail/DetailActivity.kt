@@ -1,4 +1,4 @@
-package com.tsongkha.random.detail
+package com.tsongkha.random.feature.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.epoxy
+package com.tsongkha.random.feature.list.epoxy
 
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController

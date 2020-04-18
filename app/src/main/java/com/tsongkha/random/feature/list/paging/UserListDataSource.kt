@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.paging
+package com.tsongkha.random.feature.list.paging
 
 import androidx.paging.PageKeyedDataSource
 import com.tsongkha.random.common.domain.User

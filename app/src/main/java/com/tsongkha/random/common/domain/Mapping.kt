@@ -1,6 +1,6 @@
 package com.tsongkha.random.common.domain
 
-import com.tsongkha.random.list.paging.Paging
+import com.tsongkha.random.feature.list.paging.Paging
 import toothpick.InjectConstructor
 import com.tsongkha.random.common.network.dto.Info as InfoDto
 import com.tsongkha.random.common.network.dto.Result as ResultDto

@@ -1,4 +1,4 @@
-package com.tsongkha.random.list
+package com.tsongkha.random.feature.list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tsongkha.random.R
 import com.tsongkha.random.common.application.ApplicationScope
-import com.tsongkha.random.list.epoxy.PagedUserController
+import com.tsongkha.random.feature.list.epoxy.PagedUserController
 import toothpick.ktp.KTP
 import javax.inject.Inject
 

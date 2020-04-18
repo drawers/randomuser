@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.paging
+package com.tsongkha.random.feature.list.paging
 
 data class Paging(
     val maxResults: Int,

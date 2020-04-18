@@ -1,4 +1,4 @@
-package com.tsongkha.random.list
+package com.tsongkha.random.feature.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -6,8 +6,8 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.tsongkha.random.common.domain.User
 import com.tsongkha.random.common.domain.UserDataSource
-import com.tsongkha.random.list.paging.Paging
-import com.tsongkha.random.list.paging.UserListDataSourceFactory
+import com.tsongkha.random.feature.list.paging.Paging
+import com.tsongkha.random.feature.list.paging.UserListDataSourceFactory
 import toothpick.InjectConstructor
 
 @InjectConstructor

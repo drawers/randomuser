@@ -1,4 +1,4 @@
-package com.tsongkha.random.list.epoxy
+package com.tsongkha.random.feature.detail.epoxy
 
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,28 +10,24 @@ import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.tsongkha.random.R
 import com.tsongkha.random.common.BaseEpoxyHolder
 
-@EpoxyModelClass(layout = R.layout.item_user)
-abstract class UserModel : EpoxyModelWithHolder<UserModel.Holder>() {
+@EpoxyModelClass(layout = R.layout.item_name)
+abstract class NameModel : EpoxyModelWithHolder<NameModel.Holder>() {
 
     @EpoxyAttribute
-    lateinit var titleName: String
+    lateinit var pictureUrl: String
 
     @EpoxyAttribute
-    lateinit var thumbnail: String
+    lateinit var name: String
 
     @EpoxyAttribute
-    lateinit var dob: String
-
-    @EpoxyAttribute
-    lateinit var gender: String
+    lateinit var titleGender: String
 
     override fun bind(holder: Holder) {
         super.bind(holder)
         with(holder.itemView) {
-            findViewById<TextView>(R.id.nameTextView).text = titleName
-            findViewById<TextView>(R.id.genderTextView).text = gender
-            findViewById<TextView>(R.id.dobTextView).text = dob
-            findViewById<ImageView>(R.id.thumbnailImageView).load(uri = thumbnail) {
+            findViewById<TextView>(R.id.nameTextView).text = name
+            findViewById<TextView>(R.id.titleGenderTextView).text = titleGender
+            findViewById<ImageView>(R.id.profileImageView).load(uri = pictureUrl) {
                 transformations(CircleCropTransformation())
             }
         }

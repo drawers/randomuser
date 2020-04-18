@@ -10,7 +10,6 @@ data class User(
     val email: String,
     val login: Login,
     val dob: Dob,
-    val registered: Registered,
     val phone: String,
     val cell: String,
     val id: Id,

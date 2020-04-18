@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".detail.DetailActivity"
+            android:name="com.tsongkha.random.feature.detail.DetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".list.UserListActivity">
+        <activity android:name="com.tsongkha.random.feature.list.UserListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
