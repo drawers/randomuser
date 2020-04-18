@@ -32,7 +32,7 @@ import com.tsongkha.random.common.domain.User
 //    nat = this.nat
 //)
 
-fun User.toUserEntity(id: Int): UserEntity = UserEntity(
+fun User.toUserEntity(): UserEntity = UserEntity(
     id = this.id,
     uuid = this.uuid,
     gender = this.gender,
