@@ -7,7 +7,7 @@ import com.tsongkha.random.common.domain.User
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class PagedUserController() : PagedListEpoxyController<User>() {
+class PagedUserController(private val callback: (User) -> Unit) : PagedListEpoxyController<User>() {
 
     init {
         isDebugLoggingEnabled = true
@@ -26,8 +26,9 @@ class PagedUserController() : PagedListEpoxyController<User>() {
                 id(item.id)
                 titleName("${item.name.first} ${item.name.last} (${item.name.title}) ${item.id}")
                 gender(item.gender.take(1).toUpperCase(Locale.ROOT))
-                dob(dateFormat.format(item.dob.date))
+                dob(dateFormat.format(item.dob))
                 thumbnail(item.picture.thumbnail)
+                onClick { callback.invoke(item) }
             }
         }
     }
