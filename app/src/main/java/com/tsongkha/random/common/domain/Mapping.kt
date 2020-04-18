@@ -1,4 +1,4 @@
-package com.tsongkha.random.domain
+package com.tsongkha.random.common.domain
 
 import com.tsongkha.random.list.paging.Paging
 import toothpick.InjectConstructor

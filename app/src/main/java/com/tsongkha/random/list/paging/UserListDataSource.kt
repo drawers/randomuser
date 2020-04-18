@@ -1,8 +1,8 @@
 package com.tsongkha.random.list.paging
 
 import androidx.paging.PageKeyedDataSource
-import com.tsongkha.random.domain.User
-import com.tsongkha.random.domain.UserDataSource
+import com.tsongkha.random.common.domain.User
+import com.tsongkha.random.common.domain.UserDataSource
 import kotlinx.coroutines.runBlocking
 
 class UserListDataSource(

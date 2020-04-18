@@ -1,10 +1,10 @@
 package com.tsongkha.random.common.network
 
-import com.tsongkha.random.domain.DtoConverter
+import com.tsongkha.random.common.domain.DtoConverter
 import kotlinx.coroutines.delay
 import toothpick.InjectConstructor
 import javax.inject.Named
-import com.tsongkha.random.domain.Result
+import com.tsongkha.random.common.domain.Result
 
 @InjectConstructor
 class DelayingUserService(

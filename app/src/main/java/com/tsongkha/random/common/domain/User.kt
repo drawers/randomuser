@@ -1,4 +1,4 @@
-package com.tsongkha.random.domain
+package com.tsongkha.random.common.domain
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

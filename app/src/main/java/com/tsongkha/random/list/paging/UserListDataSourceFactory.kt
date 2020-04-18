@@ -2,8 +2,8 @@ package com.tsongkha.random.list.paging
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.tsongkha.random.domain.User
-import com.tsongkha.random.domain.UserDataSource
+import com.tsongkha.random.common.domain.User
+import com.tsongkha.random.common.domain.UserDataSource
 
 class UserListDataSourceFactory(
     private val userDataSource: UserDataSource,

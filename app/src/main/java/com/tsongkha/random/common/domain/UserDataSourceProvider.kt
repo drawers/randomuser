@@ -1,4 +1,4 @@
-package com.tsongkha.random.domain
+package com.tsongkha.random.common.domain
 
 import com.tsongkha.random.common.network.RemoteUserDataSource
 import toothpick.InjectConstructor

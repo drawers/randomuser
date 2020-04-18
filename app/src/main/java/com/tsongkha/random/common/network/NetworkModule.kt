@@ -1,8 +1,8 @@
 package com.tsongkha.random.common.network
 
 import com.squareup.moshi.Moshi
-import com.tsongkha.random.domain.UserDataSource
-import com.tsongkha.random.domain.UserDataSourceProvider
+import com.tsongkha.random.common.domain.UserDataSource
+import com.tsongkha.random.common.domain.UserDataSourceProvider
 import com.tsongkha.random.list.paging.Paging
 import com.tsongkha.random.list.paging.PagingProvider
 import okhttp3.OkHttpClient

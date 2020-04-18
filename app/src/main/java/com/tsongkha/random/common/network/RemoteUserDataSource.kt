@@ -1,8 +1,8 @@
 package com.tsongkha.random.common.network
 
-import com.tsongkha.random.domain.DtoConverter
-import com.tsongkha.random.domain.Result
-import com.tsongkha.random.domain.UserDataSource
+import com.tsongkha.random.common.domain.DtoConverter
+import com.tsongkha.random.common.domain.Result
+import com.tsongkha.random.common.domain.UserDataSource
 import toothpick.InjectConstructor
 
 @InjectConstructor

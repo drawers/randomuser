@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.tsongkha.random.domain.User
-import com.tsongkha.random.domain.UserDataSource
+import com.tsongkha.random.common.domain.User
+import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.list.paging.Paging
 import com.tsongkha.random.list.paging.UserListDataSourceFactory
 import toothpick.InjectConstructor

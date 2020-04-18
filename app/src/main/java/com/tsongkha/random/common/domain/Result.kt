@@ -1,4 +1,4 @@
-package com.tsongkha.random.domain
+package com.tsongkha.random.common.domain
 
 data class Result(
     val results: List<User>,

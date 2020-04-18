@@ -1,6 +1,6 @@
 package com.tsongkha.random.common.db
 
-import com.tsongkha.random.domain.User
+import com.tsongkha.random.common.domain.User
 
 //fun UserEntity.toDomain(): User = User(
 //    gender = this.gender,
