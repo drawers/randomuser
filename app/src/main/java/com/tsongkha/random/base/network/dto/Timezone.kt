@@ -1,4 +1,4 @@
-package com.tsongkha.random.user
+package com.tsongkha.random.base.network.dto
 
 import com.squareup.moshi.JsonClass
 
