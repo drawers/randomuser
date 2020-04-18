@@ -1,4 +1,4 @@
-package com.tsongkha.random.base.network
+package com.tsongkha.random.common.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

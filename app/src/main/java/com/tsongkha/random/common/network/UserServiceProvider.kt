@@ -1,4 +1,4 @@
-package com.tsongkha.random.base.network
+package com.tsongkha.random.common.network
 
 import retrofit2.Retrofit
 import toothpick.InjectConstructor

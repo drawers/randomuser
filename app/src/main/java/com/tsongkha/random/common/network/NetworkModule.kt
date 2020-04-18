@@ -1,4 +1,4 @@
-package com.tsongkha.random.base.network
+package com.tsongkha.random.common.network
 
 import com.squareup.moshi.Moshi
 import com.tsongkha.random.domain.UserDataSource

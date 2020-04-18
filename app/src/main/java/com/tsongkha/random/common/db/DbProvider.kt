@@ -1,8 +1,8 @@
-package com.tsongkha.random.base.db
+package com.tsongkha.random.common.db
 
 import android.content.Context
 import androidx.room.Room
-import com.tsongkha.random.base.application.APPLICATION
+import com.tsongkha.random.common.application.APPLICATION
 import javax.inject.Named
 import javax.inject.Provider
 

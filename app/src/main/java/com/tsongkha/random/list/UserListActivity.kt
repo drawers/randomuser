@@ -6,16 +6,12 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tsongkha.random.R
-import com.tsongkha.random.base.application.ApplicationScope
-import com.tsongkha.random.base.network.UserService
+import com.tsongkha.random.common.application.ApplicationScope
 import com.tsongkha.random.list.epoxy.PagedUserController
 import toothpick.ktp.KTP
 import javax.inject.Inject
 
 class UserListActivity : AppCompatActivity() {
-
-    @Inject
-    lateinit var userService: UserService
 
     @Inject
     lateinit var viewModel: UserListViewModel

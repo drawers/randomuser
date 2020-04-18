@@ -1,4 +1,4 @@
-package com.tsongkha.random.base.db
+package com.tsongkha.random.common.db
 
 import androidx.room.Dao
 import androidx.room.Insert

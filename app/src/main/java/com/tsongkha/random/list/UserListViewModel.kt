@@ -4,22 +4,22 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.tsongkha.random.base.network.UserService
+import com.tsongkha.random.domain.User
+import com.tsongkha.random.domain.UserDataSource
 import com.tsongkha.random.list.paging.Paging
 import com.tsongkha.random.list.paging.UserListDataSourceFactory
-import com.tsongkha.random.user.User
 import toothpick.InjectConstructor
 
 @InjectConstructor
 class UserListViewModel(
-    private val userService: UserService,
+    private val userDataSource: UserDataSource,
     private val paging: Paging
 ) : ViewModel() {
 
     val pagedList: LiveData<PagedList<User>> by lazy {
         LivePagedListBuilder<Int, User>(
             UserListDataSourceFactory(
-                userService = userService,
+                userDataSource = userDataSource,
                 paging = paging
             ),
             PagedList.Config.Builder()

@@ -1,4 +1,4 @@
-package com.tsongkha.random.base.network
+package com.tsongkha.random.common.network
 
 import com.tsongkha.random.domain.DtoConverter
 import com.tsongkha.random.domain.Result

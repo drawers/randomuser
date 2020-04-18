@@ -2,11 +2,11 @@ package com.tsongkha.random.list.paging
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.tsongkha.random.base.network.UserService
-import com.tsongkha.random.user.User
+import com.tsongkha.random.domain.User
+import com.tsongkha.random.domain.UserDataSource
 
 class UserListDataSourceFactory(
-    private val userService: UserService,
+    private val userDataSource: UserDataSource,
     private val paging: Paging
 ) : DataSource.Factory<Int, User>() {
 
@@ -15,7 +15,7 @@ class UserListDataSourceFactory(
 
     override fun create(): DataSource<Int, User> {
         return UserListDataSource(
-            userService = userService,
+            userDataSource = userDataSource,
             paging = paging
         ).also {
             latestSource = it

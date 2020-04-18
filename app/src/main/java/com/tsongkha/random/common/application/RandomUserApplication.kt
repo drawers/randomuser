@@ -1,9 +1,9 @@
-package com.tsongkha.random.base.application
+package com.tsongkha.random.common.application
 
 import android.app.Application
 import android.content.Context
-import com.tsongkha.random.base.db.dbModule
-import com.tsongkha.random.base.network.networkModule
+import com.tsongkha.random.common.db.dbModule
+import com.tsongkha.random.common.network.networkModule
 import toothpick.Scope
 import toothpick.ktp.KTP
 import toothpick.ktp.binding.bind

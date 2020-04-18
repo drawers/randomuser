@@ -3,7 +3,7 @@ package com.tsongkha.random.list.epoxy
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.tsongkha.random.BuildConfig
-import com.tsongkha.random.user.User
+import com.tsongkha.random.domain.User
 import java.text.SimpleDateFormat
 import java.util.Locale
 

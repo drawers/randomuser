@@ -1,4 +1,4 @@
-package com.tsongkha.random.base
+package com.tsongkha.random.common
 
 import android.view.View
 import com.airbnb.epoxy.EpoxyHolder

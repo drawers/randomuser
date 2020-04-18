@@ -1,18 +1,18 @@
 package com.tsongkha.random.list.paging
 
 import androidx.paging.PageKeyedDataSource
-import com.tsongkha.random.base.network.UserService
-import com.tsongkha.random.user.User
+import com.tsongkha.random.domain.User
+import com.tsongkha.random.domain.UserDataSource
 import kotlinx.coroutines.runBlocking
 
 class UserListDataSource(
-    private val userService: UserService,
+    private val userDataSource: UserDataSource,
     private val paging: Paging
 ) : PageKeyedDataSource<Int, User>() {
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, User>) {
         runBlocking {
-            val items = userService.users(
+            val items = userDataSource.users(
                 page = paging.initialPage,
                 seed = paging.seed,
                 results = paging.pageSize,
@@ -31,7 +31,7 @@ class UserListDataSource(
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, User>) {
         runBlocking {
-            val items = userService.users(
+            val items = userDataSource.users(
                 page = params.key,
                 seed = paging.seed,
                 results = params.requestedLoadSize,
@@ -47,7 +47,7 @@ class UserListDataSource(
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, User>) {
         runBlocking {
-            val items = userService.users(
+            val items = userDataSource.users(
                 page = params.key,
                 seed = paging.seed,
                 results = params.requestedLoadSize,

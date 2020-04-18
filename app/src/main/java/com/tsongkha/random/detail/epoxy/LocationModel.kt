@@ -5,7 +5,7 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.tsongkha.random.R
-import com.tsongkha.random.base.BaseEpoxyHolder
+import com.tsongkha.random.common.BaseEpoxyHolder
 
 @EpoxyModelClass(layout = R.layout.item_location)
 abstract class LocationModel : EpoxyModelWithHolder<LocationModel.Holder>() {
