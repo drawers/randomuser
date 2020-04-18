@@ -12,7 +12,7 @@ class PersistingUserDataSource(
 
     override suspend fun users(page: Int, seed: String, results: Int, exclude: String?, include: String?): Result {
         val result = delegate.users(page, seed, results, exclude, include)
-        userDao.insert(*result.results.map { it.toUserEntity() }.toTypedArray())
+        userDao.insert(*result.results.map { it.toEntity() }.toTypedArray())
         return result
     }
 }

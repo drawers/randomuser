@@ -77,4 +77,28 @@ class PagingTest {
 
         assertEquals(5, paging.totalPages)
     }
+
+    @Test
+    fun `id range for first page`() {
+        val paging = Paging(
+            200,
+            50,
+            1,
+            "abc"
+        )
+
+        assertEquals(IntRange(1, 50), paging.idsForPage(1))
+    }
+
+    @Test
+    fun `id range for second page`() {
+        val paging = Paging(
+            200,
+            50,
+            1,
+            "abc"
+        )
+
+        assertEquals(IntRange(51, 100), paging.idsForPage(2))
+    }
 }

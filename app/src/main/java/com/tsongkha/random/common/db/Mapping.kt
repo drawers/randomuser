@@ -1,38 +1,26 @@
 package com.tsongkha.random.common.db
 
+import com.tsongkha.random.common.domain.Location
+import com.tsongkha.random.common.domain.Name
+import com.tsongkha.random.common.domain.Phone
+import com.tsongkha.random.common.domain.Picture
+import com.tsongkha.random.common.domain.Street
 import com.tsongkha.random.common.domain.User
 
-//fun UserEntity.toDomain(): User = User(
-//    gender = this.gender,
-//    name = Name(
-//        title = this.title,
-//        first = this.firstName,
-//        last = this.lastName
-//    ),
-//    location = Location(
-//        street = Street(
-//            number = this.streetNumber,
-//            name = this.streetName
-//        ),
-//        city = this.city,
-//        state = this.state,
-//        country = this.country,
-//        postcode = this.postcode
-//    ),
-//    email = this.email,
-//    dob = Dob(date = this.dob, age = this.age),
-//    phone = this.phone,
-//    login = Login(uuid = this.uuid),
-//    cell = this.cell,
-//    picture = Picture(
-//        large = largeImage,
-//        medium = mediumImage,
-//        thumbnail = thumbnail
-//    ),
-//    nat = this.nat
-//)
+fun UserEntity.toDomain(): User = User(
+    id = this.id,
+    gender = this.gender,
+    name = Name(this.title, this.firstName, this.lastName),
+    location = Location(Street(this.streetNumber, this.streetName), this.city, this.state, this.country, this.postcode),
+    email = this.email,
+    uuid = this.uuid,
+    dob = this.dob,
+    phone = Phone(this.phone, this.cell),
+    picture = Picture(this.largeImage, this.thumbnail),
+    nat = this.nat
+)
 
-fun User.toUserEntity(): UserEntity = UserEntity(
+fun User.toEntity(): UserEntity = UserEntity(
     id = this.id,
     uuid = this.uuid,
     gender = this.gender,

@@ -34,6 +34,19 @@ data class Paging(
     }
 
     /**
+     * gives a range of upper and lower ids for a given page
+     */
+    fun idsForPage(currentPage: Int): IntRange {
+        require(initialPage <= currentPage)
+        require(currentPage <= totalPages)
+
+        val start = (currentPage - 1) * pageSize + 1
+        val endInclusive = start + pageSize - 1
+
+        return IntRange(start = start, endInclusive = endInclusive)
+    }
+
+    /**
      * Next page or null if no more data to load
      */
     fun nextPage(currentPage: Int): Int? {
