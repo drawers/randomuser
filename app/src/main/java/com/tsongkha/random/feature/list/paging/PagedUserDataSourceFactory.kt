@@ -5,20 +5,20 @@ import androidx.paging.DataSource
 import com.tsongkha.random.common.domain.User
 import com.tsongkha.random.common.domain.UserDataSource
 
-class UserListDataSourceFactory(
+class PagedUserDataSourceFactory(
     private val userDataSource: UserDataSource,
     private val paging: Paging
 ) : DataSource.Factory<Int, User>() {
 
-    private val sourceLiveData = MutableLiveData<UserListDataSource>()
-    private var latestSource: UserListDataSource? = null
+    private val sourceLiveData = MutableLiveData<PageKeyedUserDataSource>()
+    private var latestSourcePageKeyed: PageKeyedUserDataSource? = null
 
     override fun create(): DataSource<Int, User> {
-        return UserListDataSource(
+        return PageKeyedUserDataSource(
             userDataSource = userDataSource,
             paging = paging
         ).also {
-            latestSource = it
+            latestSourcePageKeyed = it
             sourceLiveData.postValue(it)
         }
     }

@@ -7,7 +7,7 @@ import androidx.paging.PagedList
 import com.tsongkha.random.common.domain.User
 import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.feature.list.paging.Paging
-import com.tsongkha.random.feature.list.paging.UserListDataSourceFactory
+import com.tsongkha.random.feature.list.paging.PagedUserDataSourceFactory
 import toothpick.InjectConstructor
 
 @InjectConstructor
@@ -18,7 +18,7 @@ class UserListViewModel(
 
     val pagedList: LiveData<PagedList<User>> by lazy {
         LivePagedListBuilder<Int, User>(
-            UserListDataSourceFactory(
+            PagedUserDataSourceFactory(
                 userDataSource = userDataSource,
                 paging = paging
             ),

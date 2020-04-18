@@ -5,7 +5,7 @@ import com.tsongkha.random.common.domain.User
 import com.tsongkha.random.common.domain.UserDataSource
 import kotlinx.coroutines.runBlocking
 
-class UserListDataSource(
+class PageKeyedUserDataSource(
     private val userDataSource: UserDataSource,
     private val paging: Paging
 ) : PageKeyedDataSource<Int, User>() {
