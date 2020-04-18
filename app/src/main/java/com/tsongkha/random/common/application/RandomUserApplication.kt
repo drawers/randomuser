@@ -3,6 +3,7 @@ package com.tsongkha.random.common.application
 import android.app.Application
 import android.content.Context
 import com.facebook.stetho.Stetho
+import com.tsongkha.random.common.data.source.dataSourceModule
 import com.tsongkha.random.common.db.dbModule
 import com.tsongkha.random.common.network.networkModule
 import toothpick.Scope
@@ -26,7 +27,8 @@ class RandomUserApplication : Application() {
                     bind<Context>().withName(APPLICATION).toInstance { this@RandomUserApplication }
                 },
                 networkModule,
-                dbModule
+                dbModule,
+                dataSourceModule
             )
     }
 }

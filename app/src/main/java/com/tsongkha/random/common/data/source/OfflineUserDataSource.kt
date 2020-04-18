@@ -1,5 +1,7 @@
-package com.tsongkha.random.common.db
+package com.tsongkha.random.common.data.source
 
+import com.tsongkha.random.common.db.UserDao
+import com.tsongkha.random.common.db.toDomain
 import com.tsongkha.random.common.domain.Info
 import com.tsongkha.random.common.domain.Result
 import com.tsongkha.random.common.domain.UserDataSource

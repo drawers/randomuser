@@ -1,13 +1,16 @@
-package com.tsongkha.random.common.db
+package com.tsongkha.random.common.data.source
 
+import com.tsongkha.random.common.db.UserDao
+import com.tsongkha.random.common.db.toEntity
 import com.tsongkha.random.common.domain.Result
 import com.tsongkha.random.common.domain.UserDataSource
 import toothpick.InjectConstructor
+import javax.inject.Named
 
 @InjectConstructor
 class PersistingUserDataSource(
     private val userDao: UserDao,
-    private val delegate: UserDataSource
+    @Named(REMOTE) private val delegate: UserDataSource
 ) : UserDataSource by delegate {
 
     override suspend fun users(page: Int, seed: String, results: Int, exclude: String?, include: String?): Result {
