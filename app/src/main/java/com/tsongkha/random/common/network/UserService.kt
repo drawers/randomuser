@@ -1,6 +1,6 @@
 package com.tsongkha.random.base.network
 
-import com.tsongkha.random.user.Result
+import com.tsongkha.random.base.network.dto.Result
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -1,7 +1,7 @@
-package com.tsongkha.random.base.network.dto.repo
+package com.tsongkha.random.common.network.dto.repo
 
 import com.dropbox.android.external.store4.Store
-import com.tsongkha.random.base.network.dto.Result
+import com.tsongkha.random.common.network.dto.Result
 import kotlinx.coroutines.InternalCoroutinesApi
 import toothpick.InjectConstructor
 
