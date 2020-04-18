@@ -30,7 +30,7 @@ data class Paging(
      */
     fun id(currentPage: Int, indexFromZero: Int): Int {
         require(0 < currentPage) { "Expected current page $currentPage to be a positive integer - pages indexed from 1" }
-        return (currentPage - 1) * pageSize + indexFromZero
+        return (currentPage - 1) * pageSize + indexFromZero + 1
     }
 
     /**
