@@ -1,6 +1,5 @@
 package com.tsongkha.random.common.data.source
 
-import com.tsongkha.random.common.db.UserDao
 import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.common.network.Connectivity
 import toothpick.InjectConstructor

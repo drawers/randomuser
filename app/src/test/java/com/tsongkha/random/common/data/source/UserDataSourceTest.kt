@@ -1,6 +1,5 @@
 package com.tsongkha.random.common.data.source
 
-import com.nhaarman.mockitokotlin2.whenever
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.tsongkha.random.common.db.FakeUserDao
@@ -12,7 +11,7 @@ import com.tsongkha.random.common.domain.Picture
 import com.tsongkha.random.common.domain.Street
 import com.tsongkha.random.common.domain.User
 import com.tsongkha.random.common.domain.UserDataSource
-import com.tsongkha.random.common.network.Connectivity
+import com.tsongkha.random.common.network.FakeConnectivity
 import com.tsongkha.random.common.network.UserService
 import com.tsongkha.random.feature.list.paging.Paging
 import junit.framework.Assert.assertEquals
@@ -24,7 +23,6 @@ import okhttp3.mockwebserver.RecordedRequest
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -36,10 +34,9 @@ class UserDataSourceTest {
 
     private lateinit var userDataSource: UserDataSource
 
-    @Mock
-    private lateinit var connectivity: Connectivity
-
     private lateinit var mockWebServer: MockWebServer
+
+    private val connectivity: FakeConnectivity = FakeConnectivity()
 
     private val page1: String by lazy {
         File("src/test/java/com/tsongkha/random/common/data/source/page1.json").readText()
@@ -60,15 +57,6 @@ class UserDataSourceTest {
         mockWebServer.start()
         val baseUrl = mockWebServer.url("")
 
-        val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(
-            MoshiConverterFactory.create(
-                Moshi.Builder().add(
-                    Date::class.java,
-                    Rfc3339DateJsonAdapter().nullSafe()
-                ).build()
-            )
-        ).build()
-
         val fakeUserDao = FakeUserDao()
 
         userDataSource = NaiveSwitchingUserDataSource(
@@ -76,7 +64,14 @@ class UserDataSourceTest {
             remoteUserDataSource = PersistingUserDataSource(
                 userDao = fakeUserDao,
                 delegate = RemoteUserDataSource(
-                    userService = retrofit.create(UserService::class.java),
+                    userService = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(
+                        MoshiConverterFactory.create(
+                            Moshi.Builder().add(
+                                Date::class.java,
+                                Rfc3339DateJsonAdapter().nullSafe()
+                            ).build()
+                        )
+                    ).build().create(UserService::class.java),
                     dtoConverter = DtoConverter(paging)
                 )
             ),
@@ -109,7 +104,7 @@ class UserDataSourceTest {
 
     @Test
     fun `loads from API and then from db`() {
-        whenever(connectivity.isConnected()).thenReturn(true)
+        connectivity.value = true
 
         val connectedResult = runBlocking {
             userDataSource.users(
@@ -123,7 +118,7 @@ class UserDataSourceTest {
 
         assertEquals(expectedFirstUser, connectedResult.results.first())
 
-        whenever(connectivity.isConnected()).thenReturn(false)
+        connectivity.value = false
 
         val offlineResult = runBlocking {
             userDataSource.users(
@@ -138,7 +133,7 @@ class UserDataSourceTest {
         assertEquals(expectedFirstUser, offlineResult.results.first())
     }
 
-    val expectedFirstUser = User(
+    private val expectedFirstUser = User(
         1,
         "female",
         Name("Miss", "Louane", "Vidal"),

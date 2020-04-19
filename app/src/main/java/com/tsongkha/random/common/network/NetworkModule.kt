@@ -16,4 +16,5 @@ val networkModule = module {
     bind<UserService>().toProvider(UserServiceProvider::class)
     bind<Paging>().toProvider(PagingProvider::class)
     bind<ConnectivityManager>().toProvider(ConnectivityManagerProvider::class)
+    bind<Connectivity>().toClass(RealConnectivity::class)
 }
