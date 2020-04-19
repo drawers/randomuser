@@ -124,12 +124,6 @@ class UserDataSourceTest {
     }
 
     @Test
-    fun readfile() {
-        val string = page1
-        println(string)
-    }
-
-    @Test
     fun `request from API honored when connected`() {
         whenever(connectivity.isConnected()).thenReturn(true)
 
