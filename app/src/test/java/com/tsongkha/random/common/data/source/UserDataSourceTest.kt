@@ -45,18 +45,6 @@ class UserDataSourceTest {
         File("src/test/java/com/tsongkha/random/common/data/source/page1.json").readText()
     }
 
-    private val page2: String by lazy {
-        File("page2.json").readText()
-    }
-
-    private val page3: String by lazy {
-        File("page3.json").readText()
-    }
-
-    private val page4: String by lazy {
-        File("page4.json").readText()
-    }
-
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
@@ -104,15 +92,6 @@ class UserDataSourceTest {
                 when {
                     request.path?.contains("page=1") == true -> {
                         return MockResponse().setResponseCode(200).setBody(page1)
-                    }
-                    request.path?.contains("page=2") == true -> {
-                        return MockResponse().setResponseCode(200).setBody(page2)
-                    }
-                    request.path?.contains("page=3") == true -> {
-                        return MockResponse().setResponseCode(200).setBody(page3)
-                    }
-                    request.path?.contains("page=4") == true -> {
-                        return MockResponse().setResponseCode(200).setBody(page4)
                     }
                     else -> {
                         throw IllegalStateException("Unexpected request")
