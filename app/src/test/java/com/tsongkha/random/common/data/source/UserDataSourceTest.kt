@@ -81,14 +81,19 @@ class UserDataSourceTest {
             )
         ).build()
 
+        val fakeUserDao = FakeUserDao()
+
         userDataSource = NaiveSwitchingUserDataSource(
             connectivity,
-            remoteUserDataSource = RemoteUserDataSource(
-                userService = retrofit.create(UserService::class.java),
-                dtoConverter = DtoConverter(paging)
+            remoteUserDataSource = PersistingUserDataSource(
+                userDao = fakeUserDao,
+                delegate = RemoteUserDataSource(
+                    userService = retrofit.create(UserService::class.java),
+                    dtoConverter = DtoConverter(paging)
+                )
             ),
             offlineUserDataSource = OfflineUserDataSource(
-                userDao = FakeUserDao(),
+                userDao = fakeUserDao,
                 paging = paging
             )
         )
@@ -124,10 +129,10 @@ class UserDataSourceTest {
     }
 
     @Test
-    fun `request from API honored when connected`() {
+    fun `loads from API and then from db`() {
         whenever(connectivity.isConnected()).thenReturn(true)
 
-        val result = runBlocking {
+        val connectedResult = runBlocking {
             userDataSource.users(
                 page = 1,
                 seed = "abc",
@@ -137,10 +142,24 @@ class UserDataSourceTest {
             )
         }
 
-        assertEquals(FIRST_USER, result.results.first())
+        assertEquals(expectedFirstUser, connectedResult.results.first())
+
+        whenever(connectivity.isConnected()).thenReturn(false)
+
+        val offlineResult = runBlocking {
+            userDataSource.users(
+                page = 1,
+                seed = "abc",
+                results = 50,
+                exclude = "registered",
+                include = null
+            )
+        }
+
+        assertEquals(expectedFirstUser, offlineResult.results.first())
     }
 
-    val FIRST_USER = User(
+    val expectedFirstUser = User(
         1,
         "female",
         Name("Miss", "Louane", "Vidal"),
