@@ -1,6 +1,5 @@
 package com.tsongkha.random.common.data.source
 
-import com.tsongkha.random.common.domain.UserDataSource
 import toothpick.ktp.binding.bind
 import toothpick.ktp.binding.module
 

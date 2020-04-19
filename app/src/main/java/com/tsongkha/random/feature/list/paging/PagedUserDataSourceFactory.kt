@@ -3,7 +3,7 @@ package com.tsongkha.random.feature.list.paging
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.tsongkha.random.common.domain.User
-import com.tsongkha.random.common.domain.UserDataSource
+import com.tsongkha.random.common.data.source.UserDataSource
 
 class PagedUserDataSourceFactory(
     private val userDataSource: UserDataSource,

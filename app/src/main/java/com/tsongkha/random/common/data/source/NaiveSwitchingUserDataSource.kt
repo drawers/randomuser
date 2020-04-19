@@ -1,8 +1,7 @@
 package com.tsongkha.random.common.data.source
 
 import com.tsongkha.random.common.domain.Result
-import com.tsongkha.random.common.domain.UserDataSource
-import com.tsongkha.random.common.network.Connectivity
+import com.tsongkha.random.common.data.network.Connectivity
 import javax.inject.Named
 
 class NaiveSwitchingUserDataSource(

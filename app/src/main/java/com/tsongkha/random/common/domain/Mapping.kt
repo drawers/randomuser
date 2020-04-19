@@ -2,9 +2,9 @@ package com.tsongkha.random.common.domain
 
 import com.tsongkha.random.feature.list.paging.Paging
 import toothpick.InjectConstructor
-import com.tsongkha.random.common.network.dto.Info as InfoDto
-import com.tsongkha.random.common.network.dto.Result as ResultDto
-import com.tsongkha.random.common.network.dto.User as UserDto
+import com.tsongkha.random.common.data.dto.Info as InfoDto
+import com.tsongkha.random.common.data.dto.Result as ResultDto
+import com.tsongkha.random.common.data.dto.User as UserDto
 
 @InjectConstructor
 class DtoConverter(private val paging: Paging) {

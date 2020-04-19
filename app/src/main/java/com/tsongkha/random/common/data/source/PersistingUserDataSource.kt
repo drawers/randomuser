@@ -1,9 +1,8 @@
 package com.tsongkha.random.common.data.source
 
-import com.tsongkha.random.common.db.UserDao
-import com.tsongkha.random.common.db.toEntity
+import com.tsongkha.random.common.data.db.UserDao
+import com.tsongkha.random.common.data.db.toEntity
 import com.tsongkha.random.common.domain.Result
-import com.tsongkha.random.common.domain.UserDataSource
 import toothpick.InjectConstructor
 import javax.inject.Named
 

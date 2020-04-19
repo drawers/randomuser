@@ -2,7 +2,7 @@ package com.tsongkha.random.feature.list.paging
 
 import androidx.paging.PageKeyedDataSource
 import com.tsongkha.random.common.domain.User
-import com.tsongkha.random.common.domain.UserDataSource
+import com.tsongkha.random.common.data.source.UserDataSource
 import kotlinx.coroutines.runBlocking
 
 class PageKeyedUserDataSource(

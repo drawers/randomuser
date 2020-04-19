@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.facebook.stetho.Stetho
 import com.tsongkha.random.common.data.source.dataSourceModule
-import com.tsongkha.random.common.db.dbModule
-import com.tsongkha.random.common.network.networkModule
+import com.tsongkha.random.common.data.db.dbModule
+import com.tsongkha.random.common.data.network.networkModule
 import toothpick.Scope
 import toothpick.ktp.KTP
 import toothpick.ktp.binding.bind

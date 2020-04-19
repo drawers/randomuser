@@ -1,10 +1,9 @@
 package com.tsongkha.random.common.data.source
 
-import com.tsongkha.random.common.db.UserDao
-import com.tsongkha.random.common.db.toDomain
+import com.tsongkha.random.common.data.db.UserDao
+import com.tsongkha.random.common.data.db.toDomain
 import com.tsongkha.random.common.domain.Info
 import com.tsongkha.random.common.domain.Result
-import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.feature.list.paging.Paging
 import toothpick.InjectConstructor
 

@@ -2,7 +2,7 @@ package com.tsongkha.random.common.data.source
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
-import com.tsongkha.random.common.db.FakeUserDao
+import com.tsongkha.random.common.data.db.FakeUserDao
 import com.tsongkha.random.common.domain.DtoConverter
 import com.tsongkha.random.common.domain.Location
 import com.tsongkha.random.common.domain.Name
@@ -10,9 +10,8 @@ import com.tsongkha.random.common.domain.Phone
 import com.tsongkha.random.common.domain.Picture
 import com.tsongkha.random.common.domain.Street
 import com.tsongkha.random.common.domain.User
-import com.tsongkha.random.common.domain.UserDataSource
-import com.tsongkha.random.common.network.FakeConnectivity
-import com.tsongkha.random.common.network.UserService
+import com.tsongkha.random.common.data.network.FakeConnectivity
+import com.tsongkha.random.common.data.network.UserService
 import com.tsongkha.random.feature.list.paging.Paging
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.runBlocking
