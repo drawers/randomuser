@@ -8,7 +8,6 @@ import com.tsongkha.random.common.domain.UserDataSource
 import com.tsongkha.random.common.network.Connectivity
 import com.tsongkha.random.common.network.UserService
 import com.tsongkha.random.feature.list.paging.Paging
-import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.Before
 import org.mockito.Mock
@@ -25,8 +24,6 @@ class UserDataSourceTest {
     private lateinit var connectivity: Connectivity
 
     private val mockWebServer: MockWebServer = MockWebServer()
-
-    private lateinit var mockHttp: OkHttpClient
 
     @Before
     fun setUp() {
