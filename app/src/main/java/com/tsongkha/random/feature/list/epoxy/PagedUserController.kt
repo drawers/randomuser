@@ -5,7 +5,6 @@ import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.tsongkha.random.BuildConfig
 import com.tsongkha.random.common.domain.User
 import java.text.SimpleDateFormat
-import java.util.Locale
 
 class PagedUserController(private val callback: (User) -> Unit) : PagedListEpoxyController<User>() {
 

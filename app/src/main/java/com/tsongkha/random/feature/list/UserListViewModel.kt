@@ -17,7 +17,7 @@ class UserListViewModel(
 ) : ViewModel() {
 
     val pagedList: LiveData<PagedList<User>> by lazy {
-        LivePagedListBuilder<Int, User>(
+        LivePagedListBuilder(
             PagedUserDataSourceFactory(
                 userDataSource = userDataSource,
                 paging = paging

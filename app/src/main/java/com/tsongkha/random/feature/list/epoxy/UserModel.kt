@@ -10,7 +10,6 @@ import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.tsongkha.random.R
 import com.tsongkha.random.common.BaseEpoxyHolder
-import com.tsongkha.random.common.domain.User
 
 @EpoxyModelClass(layout = R.layout.item_user)
 abstract class UserModel : EpoxyModelWithHolder<UserModel.Holder>() {
