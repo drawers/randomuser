@@ -5,9 +5,9 @@ import android.net.NetworkInfo
 import toothpick.InjectConstructor
 
 @InjectConstructor
-class Connectivity(private val connectivityManager: ConnectivityManager) {
+open class Connectivity(private val connectivityManager: ConnectivityManager) {
 
-    fun isConnected(): Boolean {
+    open fun isConnected(): Boolean {
         val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
         return activeNetwork?.isConnectedOrConnecting == true
     }
