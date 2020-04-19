@@ -7,7 +7,7 @@ import javax.inject.Provider
 class PagingProvider : Provider<Paging> {
 
     override fun get(): Paging = Paging(
-        maxResults = 200,
+        maxResults = 5000,
         pageSize = 50,
         initialPage = 1,
         seed = "abc"
